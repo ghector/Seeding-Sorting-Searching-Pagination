@@ -11,7 +11,7 @@ namespace Lesson.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Lesson.Models.ApplicationDbContext context)

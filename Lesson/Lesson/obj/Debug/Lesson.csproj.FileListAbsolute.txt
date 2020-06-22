@@ -106,3 +106,5 @@ C:\Users\hecto\source\repos\ghector\Seeding-Sorting-Searching-Pagination\Lesson\
 C:\Users\hecto\source\repos\ghector\Seeding-Sorting-Searching-Pagination\Lesson\Lesson\obj\Debug\Lesson.csproj.CopyComplete
 C:\Users\hecto\source\repos\ghector\Seeding-Sorting-Searching-Pagination\Lesson\Lesson\obj\Debug\Lesson.dll
 C:\Users\hecto\source\repos\ghector\Seeding-Sorting-Searching-Pagination\Lesson\Lesson\obj\Debug\Lesson.pdb
+C:\Users\hecto\source\repos\ghector\Seeding-Sorting-Searching-Pagination\Lesson\Lesson\obj\Debug\Lesson.Migrations.initial.resources
+C:\Users\hecto\source\repos\ghector\Seeding-Sorting-Searching-Pagination\Lesson\Lesson\obj\Debug\Lesson.csproj.GenerateResource.cache
