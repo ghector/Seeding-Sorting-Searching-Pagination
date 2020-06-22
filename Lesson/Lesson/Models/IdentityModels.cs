@@ -20,10 +20,15 @@ namespace Lesson.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext() : base("DefaultConnection", throwIfV1Schema: false)
+
         {
         }
+
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Assignnment> Assignnments { get; set; }
+        public DbSet<School> Schools { get; set; }
+        public DbSet<Card> Cards { get; set; }
 
         public static ApplicationDbContext Create()
         {
