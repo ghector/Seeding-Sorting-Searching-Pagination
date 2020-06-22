@@ -10,5 +10,8 @@ namespace Lesson.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public DateTime StartDate { get; set; }
+
+        public virtual ICollection<Student> Student { get; set; }
+
     }
 }
