@@ -6,6 +6,19 @@
 
 <h2>Index</h2>
 
+
+
+
+@using (Html.BeginForm("Index", "Students", FormMethod.Get))
+{
+    <p>
+        Find by Name : @Html.TextBox("searchname")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -15,13 +28,16 @@
             @Html.DisplayNameFor(model => model.Card.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            
+            @Html.ActionLink("Name","Index",new { sortorder = ViewBag.NameSortParam })
+
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.ActionLink("Age", "Index", new { sortorder = ViewBag.AgeSortParam })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Score)
+            @Html.ActionLink("Score", "Index", new { sortorder = ViewBag.ScoreSortParam })
         </th>
         <th></th>
     </tr>

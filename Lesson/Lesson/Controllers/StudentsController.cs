@@ -15,14 +15,38 @@ namespace Lesson.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Students
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder,string searchname)
         {
             var students = db.Students.Include(s => s.Card);
+
+            ViewBag.NameSortParam = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.AgeSortParam = sortOrder == "age_asc" ? "age_desc" : "age_asc";
+            ViewBag.ScoreSortParam = sortOrder == "score_asc" ? "score_desc" : "score_asc";
+
 
             //students = students.OrderBy(x => x.Name); //Kata auksousa seira os pros to name
             //students = students.OrderByDescending(x => x.Name).ThenBy(x=>x.Age).ThenByDescending(x=>x.Score);                //Kata auksousa seira os pros to name
 
 
+            if(!string.IsNullOrEmpty(searchname))
+            {
+                students = students.Where(x => x.Name.Contains(searchname));
+            }
+
+
+
+            switch (sortOrder)
+            {
+                case "name_desc": students = students.OrderByDescending(x => x.Name); break;
+                case "age_asc": students = students.OrderBy(x => x.Age); break;
+                case "age_desc": students = students.OrderByDescending(x => x.Age); break;
+                case "score_asc": students = students.OrderBy(x => x.Score); break;
+                case "score_desc": students = students.OrderByDescending(x => x.Score); break;
+                default: students = students.OrderBy(x => x.Name); break;
+            }
+
+
+         
             return View(students.ToList());
         }
 
