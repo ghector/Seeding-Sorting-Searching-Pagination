@@ -10,6 +10,7 @@ namespace Lesson.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 
